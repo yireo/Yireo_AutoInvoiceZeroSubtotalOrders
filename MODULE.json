@@ -1,1 +1,8 @@
-{}
+{
+    "module_name": "Yireo_AutoInvoiceZeroSubtotalOrders",
+    "composer_name": "yireo/magento2-auto-invoice-zero-subtotal-orders",
+    "sequence": [
+        "Magento_Sales",
+        "Magento_Payment"
+    ]
+}
