@@ -4,5 +4,7 @@
     "sequence": [
         "Magento_Sales",
         "Magento_Payment"
-    ]
+    ],
+    "phpcs_severity": "7",
+    "phpstan_level": "4"
 }
