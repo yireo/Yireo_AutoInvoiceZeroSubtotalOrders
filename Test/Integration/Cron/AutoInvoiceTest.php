@@ -4,6 +4,7 @@ namespace Yireo\AutoInvoiceZeroSubtotalOrders\Test\Integration\Cron;
 
 use Magento\Framework\Lock\LockManagerInterface;
 use Magento\Framework\ObjectManagerInterface;
+use Magento\Sales\Api\OrderItemRepositoryInterface;
 use Magento\Sales\Api\OrderRepositoryInterface;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Item as OrderItem;
@@ -111,9 +112,10 @@ class AutoInvoiceTest extends TestCase
     public function testDoesNotInvoiceOrderThatCanNotBeInvoiced(): void
     {
         $orderId = $this->createOrder('900000013', 'free', 0.0, 0.0);
+        $orderItemRepository = $this->objectManager->get(OrderItemRepositoryInterface::class);
         foreach ($this->loadOrder($orderId)->getAllItems() as $item) {
             $item->setQtyInvoiced($item->getQtyOrdered());
-            $item->save();
+            $orderItemRepository->save($item);
         }
 
         $this->getCron()->execute();
