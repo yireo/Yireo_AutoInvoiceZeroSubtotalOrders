@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="yireo" sortOrder="999" translate="label">
+            <label>Yireo</label>
+        </tab>
+        <section id="yireo_auto_invoice_zero_subtotal_orders" translate="label" sortOrder="343" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Yireo Auto Invoice Zero Subtotal Orders</label>
+            <tab>yireo</tab>
+            <resource>Yireo_AutoInvoiceZeroSubtotalOrders::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <comment>Automatically invoice orders that were placed with the "No Payment Information Required" (free) payment method and a grand total of zero</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
