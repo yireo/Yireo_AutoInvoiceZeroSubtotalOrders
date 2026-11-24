@@ -100,6 +100,24 @@ class AutoInvoiceTest extends TestCase
 
         $this->getCron()->execute();
 
+        $order = $this->loadOrder($orderId);
+        $this->assertSame(0, $order->getInvoiceCollection()->getSize());
+        $this->assertSame(Order::STATE_HOLDED, $order->getState());
+    }
+
+    /**
+     * @magentoConfigFixture current_store yireo_auto_invoice_zero_subtotal_orders/general/enabled 1
+     */
+    public function testDoesNotInvoiceOrderThatCanNotBeInvoiced(): void
+    {
+        $orderId = $this->createOrder('900000013', 'free', 0.0, 0.0);
+        foreach ($this->loadOrder($orderId)->getAllItems() as $item) {
+            $item->setQtyInvoiced($item->getQtyOrdered());
+            $item->save();
+        }
+
+        $this->getCron()->execute();
+
         $this->assertNotInvoiced($orderId);
     }
 
