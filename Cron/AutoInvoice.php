@@ -121,7 +121,7 @@ class AutoInvoice
             return false;
         }
 
-        $baseGrandTotal = $order->getBaseGrandTotal();
+        $baseGrandTotal = $order->getData(OrderInterface::BASE_GRAND_TOTAL);
         if ($baseGrandTotal === null || abs((float)$baseGrandTotal) > self::ZERO_TOTAL_THRESHOLD) {
             return false;
         }
