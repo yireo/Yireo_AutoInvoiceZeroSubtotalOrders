@@ -2,11 +2,12 @@
     "module_name": "Yireo_AutoInvoiceZeroSubtotalOrders",
     "composer_name": "yireo/magento2-auto-invoice-zero-subtotal-orders",
     "sequence": [
+        "Magento_Backend",
         "Magento_Config",
         "Magento_Payment",
         "Magento_Sales",
         "Magento_Store"
     ],
-    "phpcs_severity": "7",
+    "phpcs_severity": "6",
     "phpstan_level": "4"
 }
