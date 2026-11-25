@@ -9,5 +9,44 @@
         "Magento_Store"
     ],
     "phpcs_severity": "6",
-    "phpstan_level": "4"
+    "phpstan_level": "4",
+    "php_versions": [
+        "8.1",
+        "8.2"
+    ],
+    "skip_magento_versions": [],
+    "skip_css_utils": false,
+    "modules": [
+        "Magento_AdminNotification",
+        "Magento_Backend",
+        "Magento_Catalog",
+        "Magento_Cms",
+        "Magento_Config",
+        "Magento_Csp",
+        "Magento_Customer",
+        "Magento_Directory",
+        "Magento_Eav",
+        "Magento_Indexer",
+        "Magento_MediaGalleryUiApi",
+        "Magento_Payment",
+        "Magento_Rule",
+        "Magento_Sales",
+        "Magento_SalesSequence",
+        "Magento_Store",
+        "Magento_Theme",
+        "Magento_Variable"
+    ],
+    "components": [],
+    "config": [
+        {
+            "path": "yireo_auto_invoice_zero_subtotal_orders/general/enabled",
+            "label": "General > Enabled",
+            "description": ""
+        }
+    ],
+    "tests": {
+        "unit": 0,
+        "integration": 11,
+        "functional": 0
+    }
 }
