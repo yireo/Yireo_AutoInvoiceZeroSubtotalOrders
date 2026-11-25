@@ -1,6 +1,6 @@
 {
     "name": "yireo/magento2-auto-invoice-zero-subtotal-orders",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Automatically invoice orders placed with the free payment method and a zero grand total",
     "type": "magento2-module",
     "require": {
